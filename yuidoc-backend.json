@@ -1,0 +1,11 @@
+{
+    "name": "mean-2015",
+    "description": "my really cool mean app 2015!",
+    "version": "0.0.0",
+    "url": "https://github.com/mbing/mean-2015",
+    "options": {
+        "paths": ".",
+        "outdir": "yuidocs/backend",
+        "exclude": "node_modules,public,src"
+    }
+}
