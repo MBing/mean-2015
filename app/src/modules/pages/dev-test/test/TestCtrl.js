@@ -1,14 +1,17 @@
 'use strict';
 
-angular.module('myApp').controller('TestCtrl', ['$scope', '$timeout', 'appHttp', 'UserModel', '$location', function($scope, $timeout, appHttp, UserModel, $location) {
+angular.module('myApp').controller('TestCtrl', ['$timeout', 'appHttp', 'UserModel', '$location', function($timeout, appHttp, UserModel, $location) {
+	var vm = this;
+
+	vm.user =UserModel.load();
 	
-	$scope.user =UserModel.load();
-	
-	$scope.swipeIt =function(evt, direction, params) {
+	vm.swipeIt = function(evt, direction, params) {
 		console.log('swipe: '+direction);
 	};
 	
-	$scope.tapIt =function(evt, params) {
+	vm.tapIt = function(evt, params) {
 		console.log('tap');
 	};
+
+	return vm;
 }]);
