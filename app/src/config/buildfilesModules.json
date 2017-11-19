@@ -11,6 +11,20 @@
 			}
 		},
 		{
+			"name": "node",
+			"path": "../../node_modules",
+			"dirs": [
+				{
+					"name": "lesshat",
+					"files": {
+						"less": [
+							"lesshat.less"
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "bower",
 			"path": "bower_components",
 			"dirs": [
@@ -32,14 +46,6 @@
 						]
 					},
 					"dirs": [
-						{
-							"name": "lesshat",
-							"files": {
-								"less": [
-									"build/lesshat.less"
-								]
-							}
-						},
 						{
 							"name": "less-flexbox",
 							"files": {
