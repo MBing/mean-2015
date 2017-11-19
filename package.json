@@ -16,7 +16,7 @@
 		"lodash": "3.10.1",
 		"method-override": "2.3.5",
 		"moment": "2.10.6",
-		"mongodb": "1.4.31",
+		"mongodb": "~2.2.10",
 		"morgan": "1.6.1",
 		"node-fs": "0.1.7",
 		"node-mandrill": "1.0.1",
