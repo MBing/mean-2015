@@ -1,7 +1,7 @@
 {
 	"author": "Martin Bing <info@martinbing.com>",
 	"name": "mean-2015",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "my really cool mean app 2015!",
 	"homepage": "https://github.com/mbing/mean-2015",
 	"dependencies": {
@@ -64,6 +64,6 @@
 	},
 	"repository": "",
 	"engines": {
-		"node": "0.10.10"
+		"node": "8.5.0"
 	}
 }
