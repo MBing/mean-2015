@@ -13,5 +13,7 @@ angular.module('myApp').controller('TestCtrl', ['$timeout', 'appHttp', 'UserMode
 		console.log('tap');
 	};
 
+	vm.scopeOne = 'scope one';
+
 	return vm;
 }]);
