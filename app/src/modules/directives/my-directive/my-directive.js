@@ -51,6 +51,9 @@ angular.module('app').directive('appMyDirective', [ function () {
 				"<br />" +
 				"<br />custom text: " + attrs.customText +
 				"<br />scope One: {{scopeOne}}" +
+				"<br />scope Two: {{scopeTwo}}" +
+				"<br />" +
+				"<div class='btn' ng-click='emitEvt()'>Emit event</div>" +
 			"</div>";
 			return html;
 		},
@@ -59,6 +62,12 @@ angular.module('app').directive('appMyDirective', [ function () {
 		},
 		
 		controller: function($scope, $element, $attrs) {
+			$scope.scopeTwo = 'Scope 2';
+
+			$scope.emitEvt = function () {
+				$scope.$emit('appMyDirective', {});
+				console.log('my directive emit event');
+			};
 		}
 	};
 }]);
