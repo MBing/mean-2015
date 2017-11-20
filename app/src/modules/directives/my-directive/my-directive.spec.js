@@ -35,8 +35,9 @@ describe('appMyDirective', function() {
 	// afterEach(function() {
 	// });
 	
-	/*
-	it('should do something', function() {
-	});
-	*/
+
+	// it('should do something', function() {
+	// 	createElm({html: html});
+	// 	expect(1).toBe(1);
+	// });
 });
