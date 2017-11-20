@@ -13,7 +13,11 @@ angular.module('myApp').controller('TestCtrl', ['$timeout', 'appHttp', 'UserMode
 		console.log('tap');
 	};
 
-	vm.scopeOne = 'scope one';
+	vm.funcOne = function () {
+		console.log('func from controller');
+	};
+
+	vm.scopeOne = 'scope 1';
 
 	return vm;
 }]);

@@ -25,12 +25,15 @@ TODO
 
 'use strict';
 
-angular.module('app').directive('appMyDirective', [ function () {
+angular
+	.module('app')
+	.directive('appMyDirective', [ function () {
 
 	return {
 		restrict: 'A',
 		scope: {
-			scopeOne: '='
+			scopeOne: '=',
+			funcOne: '&?'
 		},
 
 		// replace: true,
@@ -50,10 +53,11 @@ angular.module('app').directive('appMyDirective', [ function () {
 				"my-directive"+
 				"<br />" +
 				"<br />custom text: " + attrs.customText +
-				"<br />scope One: {{scopeOne}}" +
-				"<br />scope Two: {{scopeTwo}}" +
+				"<br />scope One: {{vm.scopeOne}}" +
+				"<br />scope Two: {{vm.scopeTwo}}" +
 				"<br />" +
-				"<div class='btn' ng-click='emitEvt()'>Emit event</div>" +
+				"<div class='btn' ng-click='vm.emitEvt()'>Emit event</div>" +
+				"<div class='btn' ng-click='vm.funcOne()'>Func One</div>" +
 			"</div>";
 			return html;
 		},
@@ -62,12 +66,17 @@ angular.module('app').directive('appMyDirective', [ function () {
 		},
 		
 		controller: function($scope, $element, $attrs) {
-			$scope.scopeTwo = 'Scope 2';
+			var vm = this;
+			vm.scopeTwo = 'Scope 2';
 
-			$scope.emitEvt = function () {
+			vm.emitEvt = function () {
 				$scope.$emit('appMyDirective', {});
 				console.log('my directive emit event');
 			};
-		}
+
+			return vm;
+		},
+		controllerAs: 'vm',
+		bindToController: true
 	};
 }]);
