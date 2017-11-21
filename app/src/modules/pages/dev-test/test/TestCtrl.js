@@ -10,6 +10,7 @@ angular.module('myApp').controller('TestCtrl', ['$scope','$timeout', 'appHttp', 
 		vm.log.push(text);
 	}
 	vm.user =UserModel.load();
+	$scope.user = UserModel.load();
 	
 	vm.swipeIt = function(evt, direction, params) {
 		logIt('swipe: '+direction);
