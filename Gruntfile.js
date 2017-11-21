@@ -30,7 +30,7 @@ Other calls (relatively in order of importantance / most used). Scroll to the bo
 	`grunt dev-build` for watching and auto-running BUILD (i.e. `grunt q`) only
 - test
 	`grunt karma-cov` to run/build karma/angular coverage report (since grunt dev watch task does NOT do this due to a bug/issue with karma where running the coverage does NOT show test info on the console, which makes it annoying to debug)
-	`grunt e2e` to run protractor/selenium e2e frontend tests
+	`grunt e2e` to run node_modules/protractor/node_modules/webdriver-manager/selenium e2e frontend tests
 	`grunt test-frontend` - run all frontend tests (unit & e2e)
 	`grunt node-cov` to run just backend node tests AND do coverage (show report and fail if below threshold) - only this task will actually show coverage and fail on the CONSOLE but the coverage report will always be written
 	`grunt test-backend` to just test backend - NOTE: there's really no reason to use this; just use `node-cov` or `test-backend-dev` instead.
@@ -163,11 +163,11 @@ module.exports = function(grunt) {
 		var protractorPath ='node_modules/protractor/bin/protractor';		//non-Windows
 		var pathPrefix ='';
 		pathPrefix ='node_modules/protractor/';
-		var seleniumStartupParts =['java', '-jar', pathPrefix+'selenium/selenium-server-standalone-2.47.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'selenium/chromedriver'];
+		var seleniumStartupParts =['java', '-jar', pathPrefix+'node_modules/webdriver-manager/selenium/selenium-server-standalone-3.7.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules/webdriver-manager/selenium/chromedriver'];
 		if(cfgJson.operatingSystem !==undefined && cfgJson.operatingSystem =='windows') {
 			pathPrefix ='node_modules\\protractor\\';
 			protractorPath ='node_modules\\.bin\\protractor';		//Windows
-			seleniumStartupParts =['java', '-jar', pathPrefix+'selenium\\selenium-server-standalone-2.47.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'selenium\\chromedriver.exe'];
+			seleniumStartupParts =['java', '-jar', pathPrefix+'node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules\\webdriver-manager\\selenium\\chromedriver.exe'];
 		}
 		var seleniumStartup =seleniumStartupParts.join(' ');
 		var seleniumStartupCmd =seleniumStartupParts[0];

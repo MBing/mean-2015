@@ -10,6 +10,8 @@ describe('TestCtrl', function(){
 		$ctrl = _$controller_('TestCtrl', {$scope: $scope});
 	}));
 	
-	it('should be called', function() {
+	it('should have a funcOne function', function() {
+		$scope.funcOne();
+		expect($scope.log[($scope.log.length - 1)]).toBe('func from controller1')
 	});
 });
