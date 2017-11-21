@@ -24,9 +24,10 @@ angular
 		//TODO, i.e.
 		save: function(items, params) {
 			this.items = items;
+			return true;
 		},
 
-		load: function (params) {
+		read: function (params) {
 			if (!this.items || this.items.length < 1) {
 				this.items = [
                     {

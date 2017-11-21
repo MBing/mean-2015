@@ -1,20 +1,32 @@
 'use strict';
 
-describe('appMyService factory', function() {
-	var $rootScope ={}, appMyService;
+describe('appItemsList factory', function() {
+	var $rootScope ={}, appItemsList;
 	
 	beforeEach(module('myApp'));
 	
-	beforeEach(inject(function(_$rootScope_, _appMyService_) {
+	beforeEach(inject(function(_$rootScope_, _appItemsList_) {
 		$rootScope = _$rootScope_;
-		appMyService =_appMyService_;
+        appItemsList =_appItemsList_;
 	}));
 	
 	// afterEach(function() {
 	// });
 	
-	/*
-	it('should do something', function() {
+	it('should save items', function() {
+		var items = [1, 2];
+		appItemsList.save(items);
+		expect(appItemsList.items[0]).toBe(1);
 	});
-	*/
+
+    it('should read items', function() {
+        var items = appItemsList.read({});
+        expect(items[0].title).toBe('title 1');
+    });
+
+    it('should read items with existing items', function() {
+    	appItemsList.items = ['three', 'four'];
+        var items = appItemsList.read({});
+        expect(items[0]).toBe('three');
+    });
 });
