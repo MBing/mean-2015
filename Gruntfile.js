@@ -163,11 +163,11 @@ module.exports = function(grunt) {
 		var protractorPath ='node_modules/protractor/bin/protractor';		//non-Windows
 		var pathPrefix ='';
 		pathPrefix ='node_modules/protractor/';
-		var seleniumStartupParts =['java', '-jar', pathPrefix+'node_modules/webdriver-manager/selenium/selenium-server-standalone-3.7.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules/webdriver-manager/selenium/chromedriver'];
+		var seleniumStartupParts =['java', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules/webdriver-manager/selenium/chromedriver', '-jar', pathPrefix+'node_modules/webdriver-manager/selenium/selenium-server-standalone-3.7.1.jar'];
 		if(cfgJson.operatingSystem !==undefined && cfgJson.operatingSystem =='windows') {
 			pathPrefix ='node_modules\\protractor\\';
 			protractorPath ='node_modules\\.bin\\protractor';		//Windows
-			seleniumStartupParts =['java', '-jar', pathPrefix+'node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules\\webdriver-manager\\selenium\\chromedriver.exe'];
+			seleniumStartupParts =['java', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'node_modules\\webdriver-manager\\selenium\\chromedriver.exe', '-jar', pathPrefix+'node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar'];
 		}
 		var seleniumStartup =seleniumStartupParts.join(' ');
 		var seleniumStartupCmd =seleniumStartupParts[0];
