@@ -41,7 +41,7 @@ var pathParts =dependency.buildPaths(__dirname, {});
 var io;
 var RealtimeMod =require(pathParts.services+'realtime/realtime.js');
 var CronMod =require(pathParts.services+'cron/cron.js');
-CronMod.testRun();
+// CronMod.testRun(); // will run the cron testRun method
 
 var self;
 

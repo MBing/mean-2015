@@ -56,4 +56,9 @@
 			"profile": "{String} user/123453/img1.jpg [path to image, relative to src/common/img folder]"
 		}
 	}
+	,"product":
+	{
+		"_id":"{ObjectId} ObjectId('123l4k234l')",
+		"title": "{String} product 1"
+	}
 }
