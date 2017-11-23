@@ -1,9 +1,9 @@
 'use strict';
 
-var apiCall =require('./helper/api-call.js');
-var config =require('./helper/config.js');
+var apiCall =require('../helper/api-call.js');
+var config =require('../helper/config.js');
 
-var loginFacebook =require('./pageobject/login-facebook.js');
+var loginFacebook =require('../pageobject/login-facebook.js');
 
 var globals ={
 	user: false
